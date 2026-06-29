@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case Study</title>
+    <meta
+      name="description"
+      content="Halaman Case Study dan App Project sedang dalam proses re-editing & re-deployment. Akan tersedia kembali dalam 3–5 hari."
+    />
+    <link
+      rel="icon"
+      href="img/Screenshot_2026-06-29_022317-removebg-preview.png"
+      type="image/svg+xml"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --paper: #fafafa;
+        --ink: #14181d;
+        --pine: #2453a6;
+        --pine-dark: #0f172a;
+        --mist: #f1f4f8;
+        --marigold: #3b82f6;
+        --marigold-dark: #1d4ed8;
+        --sand: #d7dbe2;
+        --white: #ffffff;
+
+        --font-display: "Geist", system-ui, -apple-system, sans-serif;
+        --font-body: "Geist", system-ui, -apple-system, sans-serif;
+        --font-mono: "Geist", system-ui, -apple-system, sans-serif;
+
+        --radius-m: 14px;
+        --radius-l: 22px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.001ms !important;
+          transition-duration: 0.001ms !important;
+        }
+      }
+
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+      }
+      body {
+        font-family: var(--font-body);
+        background: var(--paper);
+        color: var(--ink);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* =========================================================
+   PAGE
+========================================================= */
+      .maintenance-page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem 1.5rem;
+      }
+      @supports (height: 100dvh) {
+        .maintenance-page {
+          min-height: 100dvh;
+        }
+      }
+
+      .maintenance-card {
+        width: 100%;
+        max-width: 460px;
+        text-align: center;
+      }
+
+      /* simple graphic mark */
+      .maintenance-icon {
+        position: relative;
+        width: 84px;
+        height: 84px;
+        margin: 0 auto 2rem;
+        display: grid;
+        place-items: center;
+      }
+      .maintenance-icon-ring {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 1.5px dashed var(--sand);
+        animation: spin 14s linear infinite;
+      }
+      .maintenance-icon-core {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: var(--mist);
+        display: grid;
+        place-items: center;
+        color: var(--pine);
+      }
+      .maintenance-icon-core svg {
+        width: 26px;
+        height: 26px;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .maintenance-eyebrow {
+        font-family: var(--font-display);
+        font-size: 0.78rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--pine);
+        font-weight: 600;
+        margin: 0 0 0.9em;
+      }
+
+      .maintenance-title {
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: clamp(1.6rem, 4vw, 2.1rem);
+        line-height: 1.2;
+        margin: 0 0 0.7em;
+      }
+
+      .maintenance-text {
+        font-size: 1rem;
+        color: #3f4f48;
+        margin: 0 auto 1.4em;
+        max-width: 38ch;
+      }
+
+      .maintenance-tag {
+        display: inline-block;
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: var(--pine);
+        background: var(--mist);
+        padding: 0.3em 0.75em;
+        border-radius: 999px;
+        margin-bottom: 1.8em;
+      }
+
+      .maintenance-actions {
+        display: flex;
+        justify-content: center;
+      }
+
+      .hero-cta {
+        display: inline-flex;
+        align-items: stretch;
+        background: var(--white);
+        border: 1.5px solid var(--ink);
+        border-radius: 999px;
+        overflow: hidden;
+        box-shadow: 0 16px 32px -16px rgba(20, 24, 29, 0.18);
+      }
+      .hero-cta-primary,
+      .hero-cta-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--font-body);
+        font-weight: 600;
+        font-size: 0.98rem;
+        white-space: nowrap;
+        padding: 0.95em 1.6em;
+        transition:
+          background 0.18s ease,
+          color 0.18s ease,
+          gap 0.18s ease;
+      }
+      .hero-cta-primary {
+        background: var(--marigold);
+        color: var(--white);
+      }
+      .hero-cta-primary:hover {
+        background: var(--marigold-dark);
+        gap: 0.75rem;
+      }
+      .hero-cta-primary svg {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+        transition: transform 0.18s ease;
+      }
+      .hero-cta-primary:hover svg {
+        transform: translateX(2px);
+      }
+      .hero-cta-secondary {
+        color: var(--ink);
+        border-left: 1.5px solid var(--sand);
+      }
+      .hero-cta-secondary:hover {
+        background: var(--ink);
+        color: var(--white);
+      }
+
+      @media (max-width: 380px) {
+        .hero-cta-primary,
+        .hero-cta-secondary {
+          padding: 0.85em 1.05em;
+          font-size: 0.9rem;
+        }
+      }
+
+      .maintenance-footnote {
+        margin-top: 2.4rem;
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: #9aa3ab;
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid var(--pine);
+        outline-offset: 2px;
+        border-radius: 999px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="maintenance-page">
+      <div class="maintenance-card">
+        <div class="maintenance-icon" aria-hidden="true">
+          <span class="maintenance-icon-ring"></span>
+          <span class="maintenance-icon-core">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M14.7 6.3a1 1 0 0 0 1.4 1.4l3.6-3.6a5 5 0 0 1-6.4 6.4l-7.4 7.4a2 2 0 0 1-2.8-2.8l7.4-7.4a5 5 0 0 1 6.4-6.4l-3.6 3.6Z"
+              />
+            </svg>
+          </span>
+        </div>
+
+        <h1 class="maintenance-title">Page Under Maintenance.</h1>
+        <p class="maintenance-text">
+          Case Study and App Project Case Study pages are currently unavailable
+          due to maintenance and redeployment. Access will be restored as soon
+          as the process is complete.
+        </p>
+
+        <div class="maintenance-actions">
+          <div class="hero-cta">
+            <a href="work.html" class="hero-cta-primary" id="backToHome">
+              Web project
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14" />
+                <path d="m13 6 6 6-6 6" />
+              </svg>
+            </a>
+            <a href="index.html#contact" class="hero-cta-secondary"
+              >Back to Portofolio</a
+            >
+          </div>
+        </div>
+
+        <p class="maintenance-footnote">Thanks for your patience.</p>
+      </div>
+    </main>
+
+    <script>
+      /* Konsisten dengan index.html: set flag sebelum pindah ke
+         halaman internal lain, supaya intro video & popup notice
+         tidak muncul ulang saat user balik ke beranda atau ke
+         halaman project. */
+      document.addEventListener("click", (e) => {
+        const link = e.target.closest("a[href]");
+        if (!link) return;
+
+        const href = link.getAttribute("href") || "";
+        const isInternalPageLink =
+          /^work\.html(#.*)?$/.test(href) || /^index\.html(#.*)?$/.test(href);
+        if (!isInternalPageLink) return;
+
+        try {
+          sessionStorage.setItem("ihsubhan:navigating", "1");
+        } catch (err) {
+          /* sessionStorage tidak tersedia — biarkan, halaman tujuan
+             tetap akan jalan normal */
+        }
+      });
+    </script>
+  </body>
+</html>
