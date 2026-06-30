@@ -459,12 +459,28 @@
       /* ── Mobile adjustments ── */
       @media (max-width: 768px) {
         .proj-item {
-          height: 100vh;
-          height: 100svh;
+          height: auto;
+          min-height: 70svh;
+        }
+        .proj-card {
+          height: auto;
+          min-height: 70svh;
+          display: flex;
+          flex-direction: column;
+        }
+        .proj-card-bg {
+          position: relative;
+          inset: auto;
+          aspect-ratio: 4 / 3;
+          width: 100%;
         }
         .proj-card-bg img {
           object-fit: cover;
-          object-position: center top;
+          object-position: center center;
+        }
+        .proj-card-body {
+          position: relative;
+          flex: 1;
         }
         .proj-card-bg::after {
           background: linear-gradient(
@@ -549,6 +565,23 @@
         margin: 0 auto 2rem;
         max-width: 36ch;
         font-size: 0.95rem;
+      }
+
+      @media (max-width: 600px) {
+        .page-cta-pill {
+          display: flex;
+          width: 100%;
+          max-width: 360px;
+          margin: 0 auto;
+        }
+        .page-cta-primary,
+        .page-cta-secondary {
+          flex: 1;
+          justify-content: center;
+          white-space: normal;
+          text-align: center;
+          padding: 0.95em 1em;
+        }
       }
     </style>
   </head>
